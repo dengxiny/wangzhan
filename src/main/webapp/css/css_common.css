@@ -1,0 +1,11 @@
+
+/*¶þÎ¬Âë*/
+#erCode{width:260px;height:276px;position:absolute;z-index:20;overflow:hidden;display:none}
+#wechatCode{width:260px;height:276px;position:absolute;z-index:20;overflow:hidden;display:none}
+.closeCode{top:5px;right:5px;position:absolute;z-index:22;cursor:pointer;background:url(../images/closeicon1.jpg);height:20px;width:20px}
+.erCodeBg{background:#000;filter:alpha(opacity:30);opacity:0.3;width:255px;height:275px;position:absolute;z-index:21;left:0;top:0}
+.erCodeBox{background:#f6f6f6;height:246px;width:210px;top:5px;left:5px;position:absolute;z-index:22;padding:20px 0px 0 30px}
+.erCodeBox p{text-align:center;line-height:40px;font-size:18px;font-family:'Micorsoft Yahei',Î¢ÈíÑÅºÚ;color:#666}
+.erCodeSmall{width:50px;height:50px;position:absolute;background:#3498d5 url(../images/app.png) no-repeat 0 0;background-position: center; cursor:pointer;right:0;z-index:21;top:0;filter:alpha(opacity:100);opacity:1;margin-top:20px}
+.wechatCodeSmall{width:50px;height:50px;position:absolute;background:#3498d5 url(../image/wechat.png) no-repeat 0 0; background-position: center;cursor:pointer;right:0;z-index:21;top:0;filter:alpha(opacity:100);opacity:1;margin-top:75px}
+#qqOnline{width:50px; height:50px;position:absolute;z-index:24;top:0; right:0;margin-top:-35px;cursor:pointer;background:#3498d5 url(../image/qq.png) no-repeat 0 0; background-position: center;}

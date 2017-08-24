@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper  namespace="LoginDao">
+<select id="login" parameterType="String"  resultType="com.ssm.bean.User">
+select
+username,
+password 
+from
+user
+where 
+username=#{username} 
+<!--  and  TB_test_user2_password=#{password}  -->
+
+</select>
+<select id="login1" parameterType="com.ssm.bean.User"  resultType="com.ssm.bean.User">
+select
+*
+from
+user
+where 
+username=#{username} and
+ password=#{password}
+
+<!--  and  TB_test_user2_password=#{password}  -->
+
+</select>
+
+<select id="selectIntroduce" parameterType="com.ssm.bean.User"  resultType="com.ssm.bean.User">
+select
+*
+from
+user
+where 
+username=#{username} and
+password=#{password}
+</select>
+
+<insert id="insert" parameterType="com.ssm.bean.User">
+insert into 
+user(username,password,uuid)
+values(#{username},#{password},#{uuid})
+</insert>
+<update id="update" parameterType="com.ssm.bean.User">
+update 
+user
+set
+introduce=#{introduce}
+where 
+username=#{username} 
+and password=#{password}
+</update>
+<update id="update1" parameterType="com.ssm.bean.User">
+update 
+user
+set
+type=#{type} 
+where 
+username=#{username} 
+</update>
+<update id="updatePassword" parameterType="com.ssm.bean.User">
+update 
+user
+set
+password=#{password} 
+where 
+username=#{username} 
+</update>
+
+<select id="selectForgetName" parameterType="String" resultType="com.ssm.bean.User">
+select
+*
+from
+user
+where 
+username=#{username} 
+</select>
+<select id="selectregist2" parameterType="com.ssm.bean.User" resultType="com.ssm.bean.User">
+select
+*
+from
+user
+where 
+username=#{username} and
+uuid=#{uuid}
+</select>
+<select id="selectDetail" parameterType="com.ssm.bean.UserDetail" resultType="com.ssm.bean.UserDetail">
+select
+*
+from
+accout
+where 
+ID=#{ID} 
+</select>
+<select id="selectID" parameterType="com.ssm.bean.User" resultType="java.lang.Integer">
+select
+ID
+from
+user
+where 
+username=#{username}
+</select>
+<insert id="insertDetail" parameterType="com.ssm.bean.UserDetail">
+insert into 
+accout(ID,touxiang,sex)
+values(#{ID},#{touxiang},#{sex})
+</insert>
+<update id="updateTouXiang" parameterType="com.ssm.bean.UserDetail">
+update 
+accout
+set
+touxiang=#{touxiang}
+where 
+id=#{ID} 
+</update>
+<update id="updateIntroduce" parameterType="com.ssm.bean.UserDetail">
+update 
+accout
+set
+sex=#{sex},
+introduce=#{introduce}
+where 
+id=#{ID} 
+</update>
+</mapper>

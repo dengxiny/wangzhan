@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper  namespace="PicturesDao">
+<select id="selectType" parameterType="com.ssm.bean.Pictures"  resultType="com.ssm.bean.Pictures">
+select
+*
+from
+pictures
+where 
+type=#{type} 
+</select>
+<select id="selectType2" parameterType="com.ssm.bean.Pictures"  resultType="com.ssm.bean.Pictures">
+select
+*
+from
+pictures
+where 
+type=#{type} and
+typedetail=#{typedetail}
+</select>
+<select id="selectTypeDetail" parameterType="com.ssm.bean.Pictures"  resultType="java.lang.String">
+select
+DISTINCT(typedetail)
+from
+pictures
+where 
+type=#{type}
+</select>
+
+<select id="selectTypeCount" parameterType="com.ssm.bean.Pictures"  resultType="java.lang.Integer">
+select
+count(*)
+from
+pictures
+where 
+type=#{type}
+</select>
+<select id="selectTypeList" parameterType="java.util.Map"  resultType="com.ssm.bean.Pictures">
+select
+*
+from
+pictures
+where 
+type=#{type}
+limit #{startnum},#{pagerecord}
+</select>
+<!-- <insert id="add" parameterType="java.lang.String">
+INSERT INTO pictures(
+TYPE,
+imagepath
+)
+ VALUES(
+ 'A',
+ #{string}
+ ); 
+</insert>  -->
+ <insert id="add" parameterType="java.lang.String">
+INSERT INTO pictures(
+path
+)
+ VALUES(
+#{string}
+ ); 
+</insert>
+</mapper>
